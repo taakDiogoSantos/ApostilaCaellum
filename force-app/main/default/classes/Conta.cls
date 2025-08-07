@@ -1,7 +1,7 @@
 public class Conta {
     //atributos da classe
     public integer numero;
-    public string titular;
+    public Cliente titular;
     public double saldo = 100;
 
     //metodos
@@ -22,7 +22,7 @@ public class Conta {
 
     //extrato que exibe no debug o valor atual na conta
     public void extrato() {
-        System.debug('Titular da conta: ' + this.titular);
+        System.debug('Titular da conta: ' + this.titular.nome);
         System.debug('Saldo da conta: ' + this.saldo);
     }
 
