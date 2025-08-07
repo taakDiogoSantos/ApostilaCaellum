@@ -8,3 +8,15 @@
 string tempvar = 'Enter_your_name_here';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
+
+Conta conta = new Conta();
+conta.numero = 1;
+conta.titular = 'diogo';
+conta.saldo = 0;
+
+conta.depositar(500);
+conta.sacar(560);
+conta.sacar(200);
+conta.extrato();
+
+
