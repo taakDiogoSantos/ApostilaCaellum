@@ -6,7 +6,7 @@ public class Conta {
 
     //metodos
     //saque de dinheiro
-    public Boolean sacar(integer valorSaque) {
+    public Boolean sacar(double valorSaque) {
         if(this.saldo > valorSaque) {          
             this.saldo -= valorSaque;
             return true;
@@ -20,7 +20,16 @@ public class Conta {
         this.saldo += valor;
     }
 
+    //extrato que exibe no debug o valor atual na conta
     public void extrato() {
+        System.debug('Titular da conta: ' + this.titular);
         System.debug('Saldo da conta: ' + this.saldo);
+    }
+
+    //transferencia de valores
+    public void transferir(double valor, Conta destino) {
+        if(this.sacar(valor)) {
+            destino.depositar(valor);
+        }
     }
 }

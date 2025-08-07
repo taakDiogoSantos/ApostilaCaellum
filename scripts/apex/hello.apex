@@ -9,14 +9,22 @@ string tempvar = 'Enter_your_name_here';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
 
-Conta conta = new Conta();
-conta.numero = 1;
-conta.titular = 'diogo';
-conta.saldo = 0;
+Conta contaDiogo = new Conta();
+contaDiogo.numero = 1;
+contaDiogo.titular = 'diogo';
+contaDiogo.saldo = 0;
 
-conta.depositar(500);
-conta.sacar(560);
-conta.sacar(200);
-conta.extrato();
+contaDiogo.depositar(500);
+contaDiogo.sacar(560);
+contaDiogo.sacar(200);
+contaDiogo.extrato();
+
+Conta contaTeste = new Conta();
+contaTeste.numero = 2;
+contaTeste.titular = 'teste';
+contaTeste.saldo = 0;
+
+contaDiogo.transferir(150, contaTeste);
+contaTeste.extrato();
 
 
