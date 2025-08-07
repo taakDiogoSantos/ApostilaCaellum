@@ -1,8 +1,8 @@
 public class Conta {
     //atributos da classe
-    public integer numero;
-    public Cliente titular;
-    public double saldo = 100;
+    private integer numero;
+    private Cliente titular;
+    private double saldo = 100;
 
     //metodos
     //saque de dinheiro
@@ -22,7 +22,7 @@ public class Conta {
 
     //extrato que exibe no debug o valor atual na conta
     public void extrato() {
-        System.debug('Titular da conta: ' + this.titular.nome);
+        System.debug('Titular da conta: ' + this.titular.getNome());
         System.debug('Saldo da conta: ' + this.saldo);
     }
 
@@ -32,4 +32,27 @@ public class Conta {
             destino.depositar(valor);
         }
     }
+
+    //gets e sets-----------------
+    public double getSaldo() {
+        return this.saldo;
+    }
+    public void setSaldo(double valor){
+        this.saldo = valor;
+    }
+
+    public Cliente getTitular() {
+        return this.titular;
+    }
+    public void setTitular(Cliente novoTitular) {
+        this.titular = novoTitular;
+    }
+    public integer getNumero() {
+        return this.numero;
+    }
+    public void setNumero(integer numero) {
+        this.numero = numero;
+    }
+
+    //fim gets e sets ----------------------
 }
