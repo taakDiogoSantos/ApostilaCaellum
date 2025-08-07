@@ -4,6 +4,12 @@ public class Conta {
     private Cliente titular;
     private double saldo = 100;
 
+    //Construtores da classe
+    public Conta(integer numero, Cliente titular){
+        this.numero = numero;
+        this.titular = titular;
+    }
+
     //metodos
     //saque de dinheiro
     public Boolean sacar(double valorSaque) {
@@ -30,6 +36,9 @@ public class Conta {
     public void transferir(double valor, Conta destino) {
         if(this.sacar(valor)) {
             destino.depositar(valor);
+            System.debug('Transferencia realizada com sucesso!');
+        } else {
+            System.debug('Saldo insuficiente!');
         }
     }
 

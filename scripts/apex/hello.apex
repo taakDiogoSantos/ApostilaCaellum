@@ -5,28 +5,18 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
-
-Cliente diogo = new Cliente();
-diogo.setNome('Diogo');
-Conta contaDiogo = new Conta();
-contaDiogo.setNumero(1);
-contaDiogo.setTitular(diogo);
+Cliente diogo = new Cliente('diogo', 'cpfexemplo', 'rg ememplo', 'rua 123');
+Conta contaDiogo = new Conta(1, diogo);
 
 contaDiogo.depositar(500);
 contaDiogo.sacar(560);
 contaDiogo.sacar(200);
 contaDiogo.extrato();
 
-Cliente teste = new Cliente();
-teste.setNome('Teste');
-Conta contaTeste = new Conta();
-contaTeste.setNumero(2);
-contaTeste.setTitular(teste);
+Cliente teste = new Cliente('teste', 'cpfTeste', 'rgTeste', 'ruaTeste');
+Conta contaTeste = new Conta(2, teste);
 
-contaDiogo.transferir(150, contaTeste);
+contaDiogo.transferir(10000, contaTeste);
 contaTeste.extrato();
 
 
