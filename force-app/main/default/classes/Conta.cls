@@ -1,8 +1,8 @@
-public class Conta {
+public virtual class Conta {
     //atributos da classe
-    private integer numero;
-    private Cliente titular;
-    private double saldo = 100;
+    public integer numero{get; set;}
+    public Cliente titular {get; set;}
+    public double saldo {get; private set;}
 
     //Construtores da classe
     public Conta(integer numero, Cliente titular){
@@ -10,9 +10,11 @@ public class Conta {
         this.titular = titular;
     }
 
+    public Conta(){}
+
     //metodos
     //saque de dinheiro
-    public Boolean sacar(double valorSaque) {
+    public virtual Boolean sacar(double valorSaque) {
         if(this.saldo > valorSaque) {          
             this.saldo -= valorSaque;
             return true;
@@ -41,27 +43,4 @@ public class Conta {
             System.debug('Saldo insuficiente!');
         }
     }
-
-    //gets e sets-----------------
-    public double getSaldo() {
-        return this.saldo;
-    }
-    public void setSaldo(double valor){
-        this.saldo = valor;
-    }
-
-    public Cliente getTitular() {
-        return this.titular;
-    }
-    public void setTitular(Cliente novoTitular) {
-        this.titular = novoTitular;
-    }
-    public integer getNumero() {
-        return this.numero;
-    }
-    public void setNumero(integer numero) {
-        this.numero = numero;
-    }
-
-    //fim gets e sets ----------------------
 }

@@ -5,8 +5,11 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
+
+List<Conta> contas = new List<contas>();
 Cliente diogo = new Cliente('diogo', 'cpfexemplo', 'rg ememplo', 'rua 123');
 Conta contaDiogo = new Conta(1, diogo);
+contas.add(contaDiogo);
 
 contaDiogo.depositar(500);
 contaDiogo.sacar(560);
@@ -15,8 +18,13 @@ contaDiogo.extrato();
 
 Cliente teste = new Cliente('teste', 'cpfTeste', 'rgTeste', 'ruaTeste');
 Conta contaTeste = new Conta(2, teste);
+contas.add(contaTeste);
 
 contaDiogo.transferir(10000, contaTeste);
 contaTeste.extrato();
+
+
+
+
 
 
