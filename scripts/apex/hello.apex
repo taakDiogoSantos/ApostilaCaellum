@@ -6,19 +6,18 @@
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
 
-List<Conta> contas = new List<contas>();
+List<Conta> contas = new List<Conta>();
 Cliente diogo = new Cliente('diogo', 'cpfexemplo', 'rg ememplo', 'rua 123');
-Conta contaDiogo = new Conta(1, diogo);
+ContaCorrente contaDiogo = new ContaCorrente(1, diogo);
 contas.add(contaDiogo);
 
-contaDiogo.depositar(500);
-contaDiogo.sacar(560);
-contaDiogo.sacar(200);
-contaDiogo.extrato();
-
 Cliente teste = new Cliente('teste', 'cpfTeste', 'rgTeste', 'ruaTeste');
-Conta contaTeste = new Conta(2, teste);
+ContaCorrente contaTeste = new ContaCorrente(2, teste);
 contas.add(contaTeste);
+
+Cliente john = new Cliente('john', 'cpfjohn', 'rgTeste', 'ruaTeste');
+ContaPoupanca contaJohn = new ContaPoupanca(3, John);
+contas.add(contaJohn);
 
 contaDiogo.transferir(10000, contaTeste);
 contaTeste.extrato();

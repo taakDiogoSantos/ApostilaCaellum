@@ -1,4 +1,4 @@
-public virtual class Conta {
+public abstract class Conta {
     //atributos da classe
     public integer numero{get; set;}
     public Cliente titular {get; set;}
@@ -8,6 +8,7 @@ public virtual class Conta {
     public Conta(integer numero, Cliente titular){
         this.numero = numero;
         this.titular = titular;
+        this.saldo = 100;
     }
 
     public Conta(){}
